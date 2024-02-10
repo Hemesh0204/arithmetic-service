@@ -14,8 +14,10 @@ app.get('/add/:expression', (req, res) => {
   // Evaluating the expression
   let result;
   try {
-      result = eval(expression);
-      res.send(${result});
+      result
+      = eval
+      (expression);
+      res.send(result.toString());
   } catch (error) {
       res.status(400).send('Invalid expression');
   }
