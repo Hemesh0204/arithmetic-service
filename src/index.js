@@ -17,7 +17,7 @@ app.get('/calculate/*', (req, res) => {
       result
       = eval
       (expression);
-      res.json(result.toString());
+      res.json(result);
   } catch (error) {
       res.status(400).send('Invalid expression');
   }
