@@ -6,6 +6,8 @@ Run the image:
 
 ```docker run -d -p 3000:3000 arithmetic-service ```
 
+# Frontend Link of the Repo:
+-[Link](https://github.com/rohit2905/num-app)
 
 
 # Team Members
