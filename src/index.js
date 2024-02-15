@@ -7,9 +7,9 @@ app.get('/', (req, res) => {
   res.send('Arithmetic service - Hello World!');
 }); 
 
-app.get('/add/:expression', (req, res) => {
+app.get('/calculate/*', (req, res) => {
   // Extracting expression from URL parameters
-  const expression = req.params.expression;
+  const expression = decodeURIComponent(req.params[0]);
 
   // Evaluating the expression
   let result;
@@ -17,7 +17,7 @@ app.get('/add/:expression', (req, res) => {
       result
       = eval
       (expression);
-      res.send(result.toString());
+      res.json(result);
   } catch (error) {
       res.status(400).send('Invalid expression');
   }
