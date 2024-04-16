@@ -17,4 +17,10 @@ jobs:
                 docker login --username nisarg0606 --password ${{secrets.ACCESS_TOKEN}} ghcr.io
                 docker build -t ghcr.io/nisarg0606/arithmetic-service:latest --file Dockerfile .  
                 docker push ghcr.io/nisarg0606/arithmetic-service:latest 
+            - name: Build and push the image to azure
+              run: |
+                docker login --username practicum15rokala --password ${{secrets.AZURR_CONTAINER_REGISTRY}} practicum15rokala.azurecr.io
+                docker tag ghcr.io/nisarg0606/arithmetic-service:latest practicum15rokala.azurecr.io/arithmetic-service:latest
+                docker push practicum15rokala.azurecr.io/arithmetic-service:latest
+
 
